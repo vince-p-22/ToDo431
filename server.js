@@ -72,13 +72,39 @@ app.get("/api/lists/:id/entries", async (req, res) => {
 
 // POST add a new entry to a list
 app.post("/api/lists/:id/entries", async (req, res) => {
-    const { title, priority } = req.body;
+    const { title, priority, dueDate } = req.body;
     if (!title) return res.status(400).json({ error: "Title is required" });
+
+    let validatedDueDate = null;
+
+    if (dueDate) {
+        const { month, day, year, time, meridiem } = dueDate;
+
+        if (!month || !day || !year || !time || !meridiem) {
+            return res.status(400).json({ error: "All due date fields are required" });
+        }
+
+        const timeRegex = /^(0[1-9]|1[0-2]):([0-5][0-9])$/;
+        if (!timeRegex.test(time)) {
+            return res.status(400).json({ error: "Time must be in hh:mm 12-hour format" });
+        }
+
+        if (!/^\d{4}$/.test(year)) {
+            return res.status(400).json({ error: "Year must be 4 digits" });
+        }
+
+        if (!["AM", "PM"].includes(meridiem)) {
+            return res.status(400).json({ error: "Meridiem must be AM or PM" });
+        }
+
+        validatedDueDate = { month, day, year, time, meridiem };
+    }
 
     const entry = {
         _id: new ObjectId(),
         title,
         priority: priority || "Low",
+        dueDate: validatedDueDate,
         createdAt: new Date().toISOString(),
         completedBool: false,
         completeTime: null,

@@ -1,7 +1,21 @@
 {
-  "name": "group-01-hw7",
+  "name": "group-14-hw7",
   "version": "1.0.0",
   "description": "Simple To-Do List Application - CSE 431 HW7",
+  "keywords": [
+    "init"
+  ],
+  "homepage": "https://github.com/vince-p-22/ToDo431#readme",
+  "bugs": {
+    "url": "https://github.com/vince-p-22/ToDo431/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vince-p-22/ToDo431.git"
+  },
+  "license": "ISC",
+  "author": "Vince",
+  "type": "nodejs",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
