@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>To-Do List App</h1>
+    </header>
+
+    <main>
+        <section id="lists-section">
+            <div class="section-header">
+                <h2>My Lists</h2>
+                <button id="add-list-btn">+ New List</button>
+            </div>
+
+            <div id="new-list-form" class="hidden">
+                <input type="text" id="new-list-title" placeholder="Enter list title...">
+                <button id="save-list-btn">Save</button>
+                <button id="cancel-list-btn">Cancel</button>
+            </div>
+
+            <ul id="lists-container"></ul>
+        </section>
+
+        <section id="entries-section" class="hidden">
+            <div class="section-header">
+                <button id="back-btn">&larr; Back</button>
+                <h2 id="current-list-title">List</h2>
+                <button id="delete-list-btn">Delete List Item</button>
+            </div>
+
+            <div id="new-entry-form">
+                <input type="text" id="new-entry-title" placeholder="Task title...">
+                <select id="new-entry-priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <button id="add-entry-btn">Add</button>
+            </div>
+
+            <ul id="entries-container"></ul>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

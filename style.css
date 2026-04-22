@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.hidden,
+#new-list-form.hidden {
+    display: none;
+}
+
+#new-list-form,
+#new-entry-form {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    background: white;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#lists-container li {
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+#lists-container li:hover {
+    background-color: #ecf0f1;
+}
+
+.entry-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.entry-left span.checked {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.entry-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.priority-badge {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.8rem;
+}
+
+.priority-low {
+    background-color: #d5f5e3;
+    color: #27ae60;
+}
+
+.priority-medium {
+    background-color: #fef9e7;
+    color: #f39c12;
+}
+
+.priority-high {
+    background-color: #fadbd8;
+    color: #e74c3c;
+}
+
+.empty-message {
+    color: #999;
+}
+
+.delete-entry-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 4px 8px;
+}
+
+.delete-entry-btn:hover {
+    background-color: #c0392b;
+}

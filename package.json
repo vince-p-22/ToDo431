@@ -1,0 +1,13 @@
+{
+  "name": "group-01-hw7",
+  "version": "1.0.0",
+  "description": "Simple To-Do List Application - CSE 431 HW7",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "mongodb": "^6.10.0"
+  }
+}
